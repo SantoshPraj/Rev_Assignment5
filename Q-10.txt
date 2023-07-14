@@ -1,0 +1,30 @@
+Q10.What do you mean by garbage collection?
+
+
+ANSWER:
+
+
+
+Garbage collection is a mechanism in Java (and some other programming languages) that automatically manages the allocation and deallocation of memory for objects. It is responsible for identifying and reclaiming memory that is no longer in use by the program, freeing up resources and preventing memory leaks.
+
+Here are some key points about garbage collection in Java:
+
+1. Object Lifecycle: In Java, objects are created dynamically on the heap using the `new` keyword. Once an object is created, it exists in memory until it is no longer reachable by any live references in the program.
+
+2. Automatic Memory Management: Java's garbage collector automatically determines when an object is no longer reachable and can be safely removed from memory. Developers do not need to explicitly deallocate memory for objects as in languages like C++.
+
+3. Reachability: An object is considered reachable if it can be accessed or reached by following references from the root of the object graph, which includes objects referenced by variables, static fields, method parameters, and active threads.
+
+4. Garbage Collection Process: The garbage collector periodically scans the object graph starting from the root objects and traces the reachable objects. Objects that are not reachable are considered garbage and eligible for garbage collection. The garbage collector then reclaims the memory occupied by those objects.
+
+5. Mark and Sweep Algorithm: The most common garbage collection algorithm used in Java is the mark and sweep algorithm. It involves two phases: marking and sweeping.
+   - Marking: The garbage collector marks all reachable objects, usually by traversing the object graph from the root objects.
+   - Sweeping: The garbage collector sweeps through the heap, deallocating memory for objects that are not marked, as they are considered garbage.
+
+6. Heap Space: The heap is the area of memory where objects are dynamically allocated. The garbage collector manages the heap space by compacting memory, defragmenting free memory blocks, and releasing memory occupied by garbage objects.
+
+7. Performance Impact: Garbage collection involves a performance overhead as the garbage collector needs to periodically run and scan the object graph. However, modern JVM implementations employ sophisticated garbage collection algorithms and optimizations to minimize the impact on application performance.
+
+8. `finalize()` Method: Java provides the `finalize()` method that allows objects to perform cleanup operations before they are garbage collected. However, its usage is discouraged in modern Java applications, as it has limited guarantees and can impact performance.
+
+By automating memory management, garbage collection relieves developers from manual memory management and helps prevent memory leaks and memory-related bugs. It simplifies memory management and improves the overall stability and reliability of Java applications.

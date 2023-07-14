@@ -1,0 +1,33 @@
+Q1.What is Exception in Java?
+
+
+
+ANSWER:
+
+
+
+
+In Java, an exception is an event that occurs during the execution of a program and disrupts its normal flow. When an exceptional situation or error occurs, the Java runtime system creates an exception object that represents the type of error encountered.
+
+Exceptions in Java are used to handle and manage errors, allowing the program to gracefully recover from exceptional conditions. They provide a mechanism to deal with abnormal or unexpected situations that may occur during program execution, such as runtime errors, input/output errors, or resource unavailability.
+
+Key points about exceptions in Java:
+
+1. Exception Hierarchy: Exceptions in Java are organized in a hierarchy. The base class for all exceptions is `java.lang.Throwable`. This class has two main subclasses: `java.lang.Error` (for severe system errors that may not be recoverable) and `java.lang.Exception` (for less severe errors that can be caught and handled).
+
+2. Checked and Unchecked Exceptions: Exceptions in Java are classified into two types: checked exceptions and unchecked exceptions.
+   - Checked exceptions: These exceptions are checked by the compiler at compile-time. They must be either caught and handled in a `try-catch` block or declared in the method signature using the `throws` keyword.
+   - Unchecked exceptions: These exceptions do not require explicit handling or declaration. They are typically runtime exceptions or errors that occur due to programming errors, such as `NullPointerException` or `ArrayIndexOutOfBoundsException`.
+
+3. Exception Handling: Exception handling is the process of dealing with exceptions when they occur. It involves catching and handling exceptions using `try-catch` blocks, throwing exceptions using the `throw` statement, and specifying exception propagation using the `throws` keyword.
+
+4. `try-catch` Blocks: Exception handling is typically done using `try-catch` blocks. The `try` block contains the code that may throw an exception, while the `catch` block catches and handles the exception. Multiple `catch` blocks can be used to handle different types of exceptions.
+
+5. `finally` Block: The `finally` block is an optional block that follows the `try-catch` block(s). It contains code that is executed regardless of whether an exception occurred or not. It is often used for cleanup operations, such as releasing resources.
+
+6. Exception Propagation: Exceptions can be propagated from method to method until they are caught and handled or until they reach the top-level of the call stack. This allows for centralized exception handling and separation of error handling code from the code that generates the exception.
+
+By using exception handling mechanisms, Java provides a structured approach to deal with errors and exceptional conditions, promoting robust and reliable software. It allows for the detection, reporting, and recovery from exceptional situations, ensuring that programs can handle errors gracefully and continue execution without unexpected termination.
+
+
+

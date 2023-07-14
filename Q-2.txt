@@ -1,0 +1,28 @@
+Q2.What is Exception Handling?
+
+
+
+
+ANSWER:
+
+
+
+Exception handling is a mechanism in Java that allows programmers to handle and manage exceptions that occur during the execution of a program. It provides a structured way to detect, report, and recover from exceptional conditions or errors that can disrupt the normal flow of a program.
+
+Exception handling involves the following key components:
+
+1. `try` block: The `try` block is used to enclose the code that may throw an exception. It is followed by one or more `catch` blocks or a `finally` block.
+
+2. `catch` block: The `catch` block is used to catch and handle exceptions. It specifies the type of exception it can handle and contains the code that is executed when the specified exception occurs. Multiple `catch` blocks can be used to handle different types of exceptions.
+
+3. `finally` block: The `finally` block is an optional block that follows the `try` block and/or `catch` blocks. It contains code that is always executed, regardless of whether an exception occurred or not. The `finally` block is typically used for cleanup operations, such as releasing resources, closing files, or terminating connections.
+
+4. `throw` statement: The `throw` statement is used to explicitly throw an exception within a program. It is followed by an instance of an exception class or a subclass. The `throw` statement is typically used to handle exceptional cases or custom error conditions.
+
+5. `throws` clause: The `throws` clause is used in method declarations to specify that the method can potentially throw one or more types of exceptions. It indicates that the responsibility of handling the exceptions is delegated to the caller of the method.
+
+Exception handling follows a sequential flow, where the program execution starts in the `try` block. If an exception occurs within the `try` block, the corresponding `catch` block(s) are evaluated to determine if they can handle the exception. If a matching `catch` block is found, its code is executed. After executing the `catch` block(s), the program continues with the code following the `try-catch` construct.
+
+If no matching `catch` block is found, or if the exception is not caught within the `catch` blocks, the exception is propagated to the next higher level of the call stack or to the JVM if it reaches the top-level. If a `finally` block is present, its code is executed before the exception is propagated.
+
+Exception handling allows programmers to handle exceptional situations, gracefully recover from errors, and provide appropriate error messages or alternative paths for execution. It helps in maintaining the stability and reliability of programs by preventing abrupt termination and enabling error reporting and recovery mechanisms.

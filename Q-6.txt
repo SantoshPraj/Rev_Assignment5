@@ -1,0 +1,53 @@
+Q6.Write a program to create and call a custom exception
+
+
+
+ANSWER:
+
+
+
+
+Certainly! Here's an example program that demonstrates how to create and call a custom exception in Java:
+
+```java
+// Custom Exception Class
+class CustomException extends Exception {
+    public CustomException(String message) {
+        super(message);
+    }
+}
+
+// Example Class
+class Example {
+    public static void performOperation(int value) throws CustomException {
+        if (value < 0) {
+            throw new CustomException("Invalid value: " + value);
+        } else {
+            System.out.println("Operation performed successfully!");
+        }
+    }
+}
+
+// Main Class
+public class CustomExceptionExample {
+    public static void main(String[] args) {
+        int value = -5;
+
+        try {
+            Example.performOperation(value);
+        } catch (CustomException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
+```
+
+In this example, we define a custom exception class `CustomException` that extends the `Exception` class. The `CustomException` class has a constructor that accepts a message to provide a specific error message when the exception is thrown.
+
+We also have a class `Example` that contains a static method `performOperation()`. This method throws the `CustomException` if the value passed is less than zero. Otherwise, it prints a success message.
+
+In the `CustomExceptionExample` class, we demonstrate the usage of the custom exception by calling the `performOperation()` method with a negative value. We catch the `CustomException` in a `catch` block and print the exception message.
+
+When you run this program, it will throw the `CustomException` since the value is less than zero. The exception will be caught, and the corresponding error message will be displayed.
+
+You can modify the value to a positive number to see the success message printed without any exception being thrown.

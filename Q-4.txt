@@ -1,0 +1,25 @@
+Q4.What are the difference between throw and throws in Java?
+
+
+
+ANSWER:
+
+
+
+
+In Java, "throw" and "throws" are two keywords used in exception handling, but they serve different purposes. Here are the differences between "throw" and "throws":
+
+1. throw:
+   - "throw" is a keyword used to explicitly throw an exception within a program.
+   - It is followed by an instance of an exception class or a subclass that represents the specific exception being thrown.
+   - The "throw" statement is typically used to handle exceptional cases or custom error conditions, allowing the programmer to explicitly indicate that an exceptional situation has occurred.
+   - When a "throw" statement is executed, the program flow is disrupted, and the exception is thrown, propagating up the call stack until it is caught and handled by an appropriate catch block or until it reaches the top-level of the program, resulting in abnormal program termination if not caught.
+
+2. throws:
+   - "throws" is used in method declarations to indicate that the method can potentially throw one or more types of exceptions.
+   - It is followed by the names of the exception classes that the method might throw, separated by commas.
+   - The "throws" keyword delegates the responsibility of handling exceptions to the caller of the method.
+   - When a method is declared with a "throws" clause, the caller of that method is informed about the potential exceptions that can be thrown and is expected to handle or propagate those exceptions further.
+   - If an exception is not caught within the method that throws it or if it is not handled by a "throws" declaration, the exception is propagated to the caller of the method.
+
+In summary, "throw" is used to explicitly throw an exception, indicating that a particular exceptional situation has occurred within the program. "throws" is used in method declarations to specify that the method may throw certain exceptions, informing the caller of the potential exceptions and delegating the responsibility of handling them. "throw" is used within the method body, while "throws" is used in the method signature.

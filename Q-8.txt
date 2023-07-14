@@ -1,0 +1,38 @@
+Q8.What is Thread in Java?
+
+
+
+
+
+ANSWER:
+
+
+
+
+In Java, a thread is a lightweight unit of execution within a program. It represents an independent path of execution that can run concurrently with other threads, allowing for concurrent and parallel execution of tasks. Threads provide a way to achieve multithreading in Java.
+
+Key points about threads in Java:
+
+1. Thread Class: In Java, threads are managed by the `java.lang.Thread` class. This class provides the necessary methods and functionality to create, start, and control threads.
+
+2. Concurrent Execution: Threads allow multiple tasks to be executed concurrently within a single program. Each thread can execute its own set of instructions independently, sharing the same resources and memory space.
+
+3. Multithreading: Multithreading is the execution of multiple threads within a program. It enables concurrent processing, where multiple tasks are executed simultaneously, potentially improving performance and responsiveness.
+
+4. Main Thread: Every Java program has a main thread, which is the starting point of the program's execution. The main thread creates and starts other threads as needed.
+
+5. Thread States: Threads can exist in various states, including:
+   - New: The thread is created but not yet started.
+   - Runnable: The thread is eligible to run, and it may be executing or waiting for its turn.
+   - Blocked/Waiting: The thread is waiting for a certain condition or resource, such as I/O or synchronization.
+   - Terminated: The thread has completed its execution and has terminated.
+
+6. Thread Synchronization: Threads can access shared resources concurrently, leading to potential conflicts or synchronization issues. Java provides mechanisms such as synchronization, locks, and monitors to ensure proper synchronization and coordination between threads.
+
+7. Thread Priorities: Threads can have priorities assigned to them, indicating the importance or urgency of their execution. Higher priority threads have a greater chance of being scheduled for execution, but the actual behavior depends on the underlying operating system.
+
+8. Thread Lifecycle: Threads go through a lifecycle that includes creation, starting, running, blocking, waiting, and termination. The `Thread` class provides methods to control and manage the lifecycle of threads.
+
+9. Thread Safety: Thread safety refers to the property of code or data structures that allows them to be safely accessed and manipulated by multiple threads concurrently, without causing race conditions or data inconsistencies. Proper synchronization techniques and thread-safe constructs ensure thread safety.
+
+By utilizing threads, Java programs can achieve concurrent and parallel execution, improving performance, responsiveness, and resource utilization. However, proper synchronization and coordination between threads should be considered to avoid conflicts and ensure thread safety.

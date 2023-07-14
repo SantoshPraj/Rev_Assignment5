@@ -1,0 +1,84 @@
+Q7.How can you handle exceptions in Java?
+
+
+
+ANSWER:
+
+
+
+In Java, exceptions can be handled using the following mechanisms:
+
+1. try-catch Blocks:
+   - The `try-catch` block is used to catch and handle exceptions.
+   - The `try` block contains the code that may throw an exception.
+   - The `catch` block specifies the type of exception it can handle and contains the code that is executed when the specified exception occurs.
+   - Multiple `catch` blocks can be used to handle different types of exceptions.
+   - Example:
+     ```java
+     try {
+         // Code that may throw an exception
+     } catch (ExceptionType1 e1) {
+         // Exception handling code for ExceptionType1
+     } catch (ExceptionType2 e2) {
+         // Exception handling code for ExceptionType2
+     } finally {
+         // Optional finally block for cleanup operations
+     }
+     ```
+
+2. throw Statement:
+   - The `throw` statement is used to explicitly throw an exception within a program.
+   - It is followed by an instance of an exception class or a subclass that represents the specific exception being thrown.
+   - Example:
+     ```java
+     throw new CustomException("This is a custom exception.");
+     ```
+
+3. throws Clause:
+   - The `throws` clause is used in method declarations to specify that the method can potentially throw one or more types of exceptions.
+   - It indicates that the responsibility of handling the exceptions is delegated to the caller of the method.
+   - Example:
+     ```java
+     public void myMethod() throws IOException {
+         // Method code that may throw an IOException
+     }
+     ```
+
+4. finally Block:
+   - The `finally` block is an optional block that follows the `try` and `catch` blocks.
+   - It contains code that is always executed, regardless of whether an exception occurred or not.
+   - It is typically used for cleanup operations, such as releasing resources.
+   - Example:
+     ```java
+     try {
+         // Code that may throw an exception
+     } catch (Exception e) {
+         // Exception handling code
+     } finally {
+         // Code that is always executed
+     }
+     ```
+
+5. Exception Propagation:
+   - Exceptions can be propagated from method to method until they are caught and handled or until they reach the top-level of the call stack.
+   - This allows for centralized exception handling and separation of error handling code from the code that generates the exception.
+   - Example:
+     ```java
+     public void method1() throws IOException {
+         // Method code that may throw an IOException
+     }
+
+     public void method2() throws IOException {
+         method1();
+     }
+
+     public void method3() {
+         try {
+             method2();
+         } catch (IOException e) {
+             // Exception handling code
+         }
+     }
+     ```
+
+By using these exception handling mechanisms, you can catch and handle exceptions, throw exceptions to indicate exceptional situations, delegate exception handling responsibilities, and perform necessary cleanup operations. This helps in ensuring program reliability and graceful error recovery.

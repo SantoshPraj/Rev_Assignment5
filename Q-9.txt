@@ -1,0 +1,58 @@
+Q9. What are the two ways of implementing thread in Java?
+
+
+
+
+ANSWER:
+
+
+
+In Java, there are two ways to implement threads: by extending the `Thread` class and by implementing the `Runnable` interface. Let's explore both approaches:
+
+1. Extending the `Thread` Class:
+   - In this approach, you create a new class that extends the `Thread` class and override its `run()` method to define the code that will be executed by the thread.
+   - The `run()` method contains the task or operations that the thread will perform when it is started.
+   - You can create an instance of the custom thread class and call its `start()` method to start the execution of the thread.
+   - Example:
+     ```java
+     class MyThread extends Thread {
+         @Override
+         public void run() {
+             // Code to be executed by the thread
+         }
+     }
+
+     public class ThreadExample {
+         public static void main(String[] args) {
+             MyThread thread = new MyThread();
+             thread.start(); // Start the thread
+         }
+     }
+     ```
+
+2. Implementing the `Runnable` Interface:
+   - In this approach, you implement the `Runnable` interface by creating a class that implements the `run()` method from the interface.
+   - The `run()` method contains the code that will be executed by the thread.
+   - You create an instance of the custom class and pass it as a parameter to the `Thread` constructor. Then, you call the `start()` method on the `Thread` object to start the execution of the thread.
+   - This approach is preferred over extending the `Thread` class because it allows for better code organization and reusability by separating the task logic from the threading logic.
+   - Example:
+     ```java
+     class MyRunnable implements Runnable {
+         @Override
+         public void run() {
+             // Code to be executed by the thread
+         }
+     }
+
+     public class ThreadExample {
+         public static void main(String[] args) {
+             MyRunnable runnable = new MyRunnable();
+             Thread thread = new Thread(runnable);
+             thread.start(); // Start the thread
+         }
+     }
+     ```
+
+Both approaches create threads that execute the code specified in the `run()` method. When the `start()` method is called, the thread begins its execution, and the `run()` method is invoked. The actual thread execution is handled by the JVM, which schedules and manages the execution of threads based on the underlying operating system.
+
+It's worth noting that the `Runnable` interface approach is generally recommended as it provides a cleaner separation between the task and threading logic, allowing for better code organization and the ability to reuse the task implementation with different threading mechanisms.

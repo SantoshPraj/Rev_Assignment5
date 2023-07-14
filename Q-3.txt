@@ -1,0 +1,30 @@
+Q3.What is the difference between Checked and Unchecked Exceptions and Error?
+
+
+
+
+ANSWER:
+
+
+
+In Java, exceptions and errors are both types of exceptional conditions that can occur during program execution. However, there are differences between checked exceptions, unchecked exceptions, and errors in terms of handling and their intended use.
+
+1. Checked Exceptions:
+   - Checked exceptions are exceptions that are checked by the compiler at compile-time. This means that the compiler enforces that checked exceptions are either caught and handled or declared in the method signature using the `throws` keyword.
+   - Examples of checked exceptions include `IOException`, `SQLException`, and `ClassNotFoundException`.
+   - Checked exceptions typically represent recoverable and expected errors, such as input/output errors, database errors, or class-loading errors.
+   - The programmer is required to explicitly handle checked exceptions, ensuring that they are properly addressed in the code. This promotes error handling and recovery strategies.
+
+2. Unchecked Exceptions:
+   - Unchecked exceptions, also known as runtime exceptions, do not require explicit handling or declaration. They are not checked by the compiler at compile-time.
+   - Examples of unchecked exceptions include `NullPointerException`, `ArrayIndexOutOfBoundsException`, and `IllegalArgumentException`.
+   - Unchecked exceptions typically represent programming errors, such as null references, array index out of bounds, or invalid method arguments.
+   - Unlike checked exceptions, unchecked exceptions are not required to be caught or declared. However, it is considered good practice to handle expected runtime exceptions to prevent unexpected program termination.
+
+3. Errors:
+   - Errors represent severe problems that are typically beyond the control of the programmer or the program itself. They indicate serious issues that may not be recoverable.
+   - Examples of errors include `OutOfMemoryError`, `StackOverflowError`, and `VirtualMachineError`.
+   - Errors are generally not meant to be caught or handled by normal application code. They typically indicate problems at the system level or issues with the JVM's execution environment.
+   - Errors are usually fatal and may lead to abnormal termination of the program. They are intended for situations where the application cannot effectively recover or continue execution.
+
+In summary, checked exceptions are checked by the compiler and require explicit handling or declaration. Unchecked exceptions, also known as runtime exceptions, do not require explicit handling. Errors indicate severe problems that may not be recoverable and are not meant to be caught or handled by normal application code. Proper exception handling strategies should be employed based on the type of exception or error to ensure program reliability and robustness.
